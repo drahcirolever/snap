@@ -1,0 +1,214 @@
+/* Global Styles */
+:root {
+    --bg-primary: #e0f7fa;
+    --bg-secondary: #e0f2f1;
+    --text-primary: #004d40;
+    --text-secondary: #00695c;
+    --highlight: #00796b;
+    --accent: #d32f2f;
+    --white: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.2);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    padding: 5rem 1rem 1rem; /* Ensure padding at the top for fixed navbar */
+    line-height: 1.6;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: var(--highlight);
+    box-shadow: 0 1px 3px var(--shadow);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.6rem 1.2rem;
+    z-index: 10;
+}
+
+.navbar + * {
+    margin-top: 5rem; /* Push content down to avoid overlap with navbar */
+}
+
+/* Form styling */
+form {
+    background-color: var(--bg-secondary);
+    box-shadow: 0 1px 3px var(--shadow);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 600px;
+    margin-inline: auto;
+}
+
+input[type="text"], input[type="file"], select {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--text-primary);
+    border-radius: 0.3rem;
+    font-size: 1rem;
+}
+
+input[type="submit"] {
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background-color: #00251a;
+}
+
+input[type="submit"]:focus {
+    outline: 2px solid var(--highlight);
+}
+
+/* Albums and Photos Section */
+.album, .photoContainer {
+    background-color: var(--bg-secondary);
+    border-radius: 0.6rem;
+    box-shadow: 0 1px 3px var(--shadow);
+    overflow: hidden;
+    width: 100%;
+    max-width: 18.75rem; /* 300px */
+    margin: 1rem; /* Ensure spacing between items */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.album:hover, .photoContainer:hover {
+    transform: scale(1.05);
+    box-shadow: 0 3px 6px var(--shadow);
+}
+
+.albums {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem; /* 20px */
+    justify-content: center;
+    margin-bottom: 2rem; /* Ensure spacing from other content */
+}
+
+.album img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.album h3 {
+    font-size: 1.125rem; /* 18px */
+    margin: 1rem;
+}
+
+.album a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: bold;
+    font-size: 0.875rem;
+    margin-left: 1rem;
+    display: block;
+    text-align: center;
+}
+
+/* Photo Card */
+.photoContainer img {
+    border-radius: 0.5rem;
+    width: 100%;
+    height: auto;
+}
+
+.photoDescription {
+    padding: 1rem;
+    background-color: var(--bg-secondary);
+    text-align: left;
+}
+
+.photoDescription h2 {
+    font-size: 1rem;
+    color: var(--text-primary);
+    font-weight: bold;
+}
+
+.photoDescription p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.photoDescription h4 {
+    font-size: 0.875rem;
+    color: var(--text-primary);
+}
+
+.photoDescription a {
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    text-decoration: none;
+    margin-right: 0.6rem;
+    transition: text-decoration 0.2s ease-in-out;
+}
+
+.photoDescription a:hover {
+    text-decoration: underline;
+}
+
+/* Delete Button */
+input[type="submit"][name="deleteAlbumBtn"] {
+    background-color: var(--accent);
+    color: var(--white);
+    border: none;
+    padding: 0.6rem 1.25rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+input[type="submit"][name="deleteAlbumBtn"]:hover {
+    background-color: #b71c1c;
+}
+
+/* Delete Confirmation Modal */
+.delete-confirmation {
+    display: none;
+    background-color: rgba(38, 50, 56, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem; /* Prevent content from hugging edges */
+}
+
+.delete-confirmation.active {
+    display: flex;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .albums {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .album, .photoContainer {
+        width: 100%;
+        max-width: 90%;
+    }
+}

@@ -1,0 +1,67 @@
+/* Global Body Styles */
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #fffff0; /* Off-white for a gentle background */
+    color: #000; /* Ensure readable text on a light background */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; /* Improve readability */
+}
+
+/* Input Styles */
+input {
+    font-size: 1.5rem; /* Use rem for scalability */
+    height: auto;
+    width: 100%;
+    padding: 0.5rem; /* Add padding for better appearance */
+    margin-bottom: 1rem; /* Space between inputs */
+    border: 1px solid #ccc; /* Light gray border for a clean look */
+    border-radius: 0.3rem; /* Rounded corners for modern styling */
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: 2px solid #0078d7; /* Add a focus indicator for accessibility */
+}
+
+/* Table Styles */
+table {
+    width: 100%; /* Ensure tables stretch across the container */
+    border-collapse: collapse; /* Avoid double borders */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: #fff; /* White background for contrast */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+th, td {
+    border: 1px solid #000;
+    padding: 0.75rem; /* Add padding for better readability */
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4; /* Slightly darker background for headers */
+    font-weight: bold;
+}
+
+/* Table Row Styles */
+tr {
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternate row colors for better readability */
+}
+
+tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    table {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+    }
+}
